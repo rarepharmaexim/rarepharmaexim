@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>RaRe Pharma | International Pharmaceutical Exporters</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
+  <!-- Google Fonts: Space Grotesk & Urbanist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+  <!-- AOS Scroll Animations CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom Site Styles -->
+  <link rel="stylesheet" href="style.css?v=7" />
+
+  <style>
+    /* Absolute dead center layout for Hero section */
+    #hero-scroll-section {
+      position: relative;
+      width: 100%;
+      height: 360vh;
+      background: #000;
+    }
+    .hero-sticky-viewport {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 1;
+      pointer-events: none;
+    }
+    #hero-overlay,
+    .hero-content-overlay {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      -webkit-transform: translate(-50%, -50%) !important;
+      width: 90% !important;
+      max-width: 860px !important;
+      padding: 20px !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      z-index: 10 !important;
+      pointer-events: none !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    #hero-overlay * {
+      text-align: center !important;
+    }
+    .hero-main-title {
+      width: 100% !important;
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .hero-sub-text {
+      width: 100% !important;
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .hero-badge-tag {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: inline-flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+    .hero-cta-btns {
+      width: 100% !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .hero-scroll-indicator {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Contact Strip -->
+  <div class="top-strip d-none d-lg-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <span class="me-4"><i class="fa-solid fa-phone me-2 text-warning"></i><a href="tel:+918329658863">+91 8329658863</a></span>
+        <span class="me-4"><i class="fa-solid fa-envelope me-2 text-warning"></i><a href="mailto:rarepharma9@gmail.com">rarepharma9@gmail.com</a></span>
+        <span><i class="fa-solid fa-ship me-2 text-warning"></i> Worldwide Air & Ocean Logistics</span>
+      </div>
+      <div>
+        <span class="badge bg-dark border border-secondary text-light px-3 py-1 rounded-pill">
+          <i class="fa-solid fa-shield-halved text-success me-1"></i> WHO-GMP & ISO Standards Compliant
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+    <div class="container">
+      <a class="brand-logo-wrap" href="#">
+        <img src="logo.jpg" alt="RaRe Pharma Exim" class="site-main-logo" />
+        <span class="brand-logo-text">
+          <span class="primary-title">RaRe</span>
+          <span class="sub-title">PHARMA EXIM</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#hero-scroll-section">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+            <ul class="dropdown-menu border-0 shadow-sm rounded-3">
+              <li><a class="dropdown-item py-2" href="#posts-section" onclick="filterCatalog('Steroids')">Steroids</a></li>
+              <li><a class="dropdown-item py-2" href="#posts-section" onclick="filterCatalog('Tablets')">Tablets</a></li>
+              <li><a class="dropdown-item py-2" href="#posts-section" onclick="filterCatalog('Capsules')">Capsules</a></li>
+              <li><a class="dropdown-item py-2" href="#posts-section" onclick="filterCatalog('Other Medicines')">Other Medicines</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#posts-section">Products & Catalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#payments-section">Payment Methods</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          
+          <!-- GET QUOTE FORM BUTTON -->
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button type="button" class="btn-header-quote" data-bs-toggle="modal" data-bs-target="#quoteRequestModal">
+              <i class="fa-solid fa-file-invoice text-warning"></i> Get Quote
+            </button>
+          </li>
+          
+          <!-- Export Inquiry Button -->
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn-brand-orange" href="https://wa.me/918329658863?text=Hello%20RaRe%20Pharma,%20I%20want%20to%20inquire%20about%20Steroids%20and%20Medicines." target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Export Inquiry
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====================================================================
+       HERO SCROLL ANIMATION SECTION (IMAGE SEQUENCE: 299 FRAMES SCRUBBING)
+       ==================================================================== -->
+  <section id="hero-scroll-section" class="hero-scroll-container">
+    <div class="hero-sticky-viewport">
+      <canvas id="hero-canvas"></canvas>
+
+      <!-- Overlay Content (fades as user scrolls through the 3D sequence) -->
+      <div id="hero-overlay" class="hero-content-overlay" style="position: absolute !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important; -webkit-transform: translate(-50%, -50%) !important; width: 90% !important; max-width: 860px !important; margin: 0 auto !important; text-align: center !important; z-index: 10 !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;">
+        <div class="hero-badge-tag">
+          <i class="fa-solid fa-plane-departure"></i> Global Logistics & Pharmaceutical Export
+        </div>
+        <h1 class="hero-main-title">
+          Exporting Quality Healthcare <span>Across International Borders.</span>
+        </h1>
+        <p class="hero-sub-text">
+          RaRe Pharma Exim is a specialized exporter providing verified Steroids, Tablets, Capsules, and critical medical formulations to overseas hospitals and distributors worldwide.
+        </p>
+        <div class="hero-cta-btns">
+          <a href="#posts-section" class="btn-brand-orange px-4 py-3">
+            <i class="fa-solid fa-layer-group"></i> Explore Live Catalog
+          </a>
+          <a href="https://wa.me/918329658863?text=Hello%20RaRe%20Pharma,%20I%20want%20to%20inquire%20about%20Test-E%20and%20other%20products." target="_blank" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold d-inline-flex align-items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-success fs-5"></i> +91 8329658863
+          </a>
+        </div>
+        <div class="hero-scroll-indicator">
+          <span>Scroll down to scrub 3D product sequence</span>
+          <div class="mouse-scroll-icon"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN WEBSITE CONTENT (STARTS RIGHT AFTER SCROLL ANIMATION) -->
+  <div id="main-site-content">
+
+    <!-- 4 Clickable Core Categories -->
+    <section class="py-5" id="categories">
+      <div class="container py-4">
+        <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+          <span class="section-tag">Core Export Categories</span>
+          <h2 class="section-heading">Comprehensive Medical Lines</h2>
+          <p class="text-muted">Click on any category to filter specialized formulations, technical specifications, and available batches.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Category 1: Steroids -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <a class="category-box" href="#posts-section" onclick="filterCatalog('Steroids')">
+              <div class="cat-icon"><i class="fa-solid fa-dumbbell"></i></div>
+              <h4 class="fw-bold mb-2">Steroids</h4>
+              <p class="text-muted small mb-3">High-purity therapeutic and hormonal compounds, Test-E, Test-C, Primobol, injectables, and verified export batches.</p>
+              <div class="cat-action-text">
+                <span>Explore Category</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+
+          <!-- Category 2: Tablets -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <a class="category-box" href="#posts-section" onclick="filterCatalog('Tablets')">
+              <div class="cat-icon"><i class="fa-solid fa-tablets"></i></div>
+              <h4 class="fw-bold mb-2">Tablets</h4>
+              <p class="text-muted small mb-3">Vidalista, Tadafil, Cenforce, Kamagra, and solid oral dosages matching international pharmacopoeias.</p>
+              <div class="cat-action-text">
+                <span>Explore Category</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+
+          <!-- Category 3: Capsules -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <a class="category-box" href="#posts-section" onclick="filterCatalog('Capsules')">
+              <div class="cat-icon"><i class="fa-solid fa-capsules"></i></div>
+              <h4 class="fw-bold mb-2">Capsules</h4>
+              <p class="text-muted small mb-3">Hard gelatin and softgel lines featuring calibrated bioavailability, stability testing, and moisture-proof packing.</p>
+              <div class="cat-action-text">
+                <span>Explore Category</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+
+          <!-- Category 4: Other Medicines -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <a class="category-box" href="#posts-section" onclick="filterCatalog('Other Medicines')">
+              <div class="cat-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+              <h4 class="fw-bold mb-2">Other Medicines</h4>
+              <p class="text-muted small mb-3">Oral liquid suspensions, sterile ophthalmic drops, pharmaceutical ointments, and Active Pharma Ingredients (APIs).</p>
+              <div class="cat-action-text">
+                <span>Explore Category</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE PRODUCTS & CATALOG SECTION -->
+    <section class="py-5 bg-white" id="posts-section">
+      <div class="container py-3">
+        <!-- 1. CATALOG GRID & PAGINATION VIEW -->
+        <div id="catalog-main-wrapper">
+          <div class="d-flex flex-wrap justify-content-between align-items-end mb-4" data-aos="fade-up">
+            <div>
+              <span class="section-tag">Verified International Catalog</span>
+              <h2 class="section-heading">Pharmaceutical & Steroid Lines</h2>
+            </div>
+            <p class="text-muted mb-0 small">Direct commercial consignments, COA certifications & bulk export pricing (9 items per page)</p>
+          </div>
+
+          <!-- Filter Tabs & Search Bar -->
+          <div class="catalog-filter-bar" data-aos="fade-up">
+            <button class="catalog-tab active" onclick="filterCatalog('All')">All Products</button>
+            <button class="catalog-tab" onclick="filterCatalog('Steroids')"><i class="fa-solid fa-flask me-1"></i> Steroids</button>
+            <button class="catalog-tab" onclick="filterCatalog('Tablets')"><i class="fa-solid fa-tablets me-1"></i> Tablets</button>
+            <button class="catalog-tab" onclick="filterCatalog('Capsules')"><i class="fa-solid fa-capsules me-1"></i> Capsules</button>
+            <button class="catalog-tab" onclick="filterCatalog('Other Medicines')"><i class="fa-solid fa-mortar-pestle me-1"></i> Other / APIs</button>
+
+            <div class="catalog-search-wrap">
+              <i class="fa-solid fa-magnifying-glass catalog-search-icon"></i>
+              <input type="text" id="catalogSearch" class="catalog-search-input" placeholder="Search Test-E, Vidalista, Tadafil..." oninput="searchProducts()" />
+            </div>
+          </div>
+
+          <!-- Dynamic Product Grid -->
+          <div class="rare-products-grid" id="productsGrid" data-aos="fade-up">
+            <!-- Populated by JavaScript with 9 items per page -->
+          </div>
+
+          <!-- Numbered Pagination (Pages 1, 2, 3...) -->
+          <div class="pagination-wrapper" id="catalogPagination">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- 2. DEDICATED BLOGGER-STYLE SINGLE PRODUCT POST VIEW -->
+        <div id="single-post-view" style="display: none;">
+          <!-- Breadcrumb & Back Bar -->
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="javascript:void(0)" onclick="closeProductPost()" class="text-decoration-none fw-bold" style="color: var(--brand-navy);"><i class="fa-solid fa-house me-1"></i> Home</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)" onclick="closeProductPost()" class="text-decoration-none fw-bold" style="color: var(--brand-navy);">Catalog</a></li>
+                <li class="breadcrumb-item text-muted" id="post-breadcrumb-cat">Category</li>
+                <li class="breadcrumb-item active fw-bold" id="post-breadcrumb-name" aria-current="page" style="color: var(--brand-orange);">Product</li>
+              </ol>
+            </nav>
+            <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold btn-sm d-inline-flex align-items-center gap-2" onclick="closeProductPost()">
+              <i class="fa-solid fa-arrow-left"></i> Back to Product Catalog
+            </button>
+          </div>
+
+          <!-- Rendered Single Post Content -->
+          <div class="single-post-container" id="singlePostContainer">
+            <!-- Filled dynamically -->
+          </div>
+
+          <!-- Related Products Strip -->
+          <div class="mt-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h3 class="fw-bold mb-0" style="color: var(--brand-navy);">Related Formulations in this Category</h3>
+              <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3" onclick="closeProductPost()">View All Catalog</button>
+            </div>
+            <div class="rare-products-grid" id="relatedProductsGrid">
+              <!-- Related 3 products -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Export Supply & Cold-Chain Logistics Highlight -->
+    <section class="py-5" style="background: var(--brand-navy-dark);">
+      <div class="container py-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <span class="section-tag text-warning">Cold-Chain & Cargo Logistics</span>
+            <h2 class="section-heading text-white mb-4">Temperature-Controlled Air & Ocean Freight</h2>
+            <p class="text-white-50 mb-4">
+              All hormone injectables, peptides, and critical solid oral dosages are packaged under validated thermal insulation boxes with continuous data-logger tracking to preserve compound stability from factory to destination.
+            </p>
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background: rgba(255,255,255,0.06);">
+                <i class="fa-solid fa-certificate text-warning fs-3"></i>
+                <div>
+                  <h6 class="text-white mb-0 fw-bold">COA & COPP Ready</h6>
+                  <small class="text-white-50">Complete analytical batch testing & Certificate of Pharmaceutical Product</small>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background: rgba(255,255,255,0.06);">
+                <i class="fa-solid fa-snowflake text-warning fs-3"></i>
+                <div>
+                  <h6 class="text-white mb-0 fw-bold">Cold-Chain Compliance (2°C - 8°C & 15°C - 25°C)</h6>
+                  <small class="text-white-50">Calibrated thermal cargo monitoring for international flights</small>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background: rgba(255,255,255,0.06);">
+                <i class="fa-solid fa-envelope-open-text text-warning fs-3"></i>
+                <div>
+                  <h6 class="text-white mb-0 fw-bold">rarepharma9@gmail.com</h6>
+                  <small class="text-white-50">Direct corporate export desk correspondence</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="hero-side-card">
+              <h4 class="text-white fw-bold mb-3 d-flex align-items-center gap-2">
+                <i class="fa-solid fa-ship text-warning"></i> Worldwide Customs Clearance Assistance
+              </h4>
+              <p class="text-white-50 small mb-4">
+                We provide commercial invoices, packing lists, airway bills, and customs classification codes to facilitate smooth import clearances across USA, UK, Europe, Middle East, Southeast Asia, and Latin America.
+              </p>
+              <div class="p-3 rounded-3 mb-3" style="background: rgba(255,117,0,0.12); border: 1px solid rgba(255,117,0,0.3);">
+                <h6 class="text-warning mb-1 fw-bold"><i class="fa-solid fa-shield-halved me-1"></i> Discreteness & Integrity</h6>
+                <small class="text-white-50">Robust neutral tamper-evident packaging engineered for high-security overseas transport.</small>
+              </div>
+              <a href="https://wa.me/918329658863?text=Hello%20RaRe%20Pharma,%20I%20have%20an%20export%20cargo%20inquiry." target="_blank" class="btn-brand-orange w-100 justify-content-center">
+                <i class="fa-brands fa-whatsapp fs-5"></i> Inquire Cargo Clearance on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Export Stats Ribbon -->
+    <section class="stats-ribbon">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-6 col-md-3" data-aos="zoom-in">
+            <div class="stat-digit">45+</div>
+            <div class="text-white-50 text-uppercase fw-bold small">Countries Reached</div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-digit">500+</div>
+            <div class="text-white-50 text-uppercase fw-bold small">Formulations</div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-digit">100%</div>
+            <div class="text-white-50 text-uppercase fw-bold small">Quality Tested</div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-digit">2021</div>
+            <div class="text-white-50 text-uppercase fw-bold small">Established Trust</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCEPTED INTERNATIONAL PAYMENT METHODS SECTION -->
+    <section class="py-5 bg-white" id="payments-section">
+      <div class="container py-4">
+        <div class="portal-banner" data-aos="fade-up">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="section-tag text-warning mb-0">Global Financial Settlement</span>
+          </div>
+          <h2 class="fw-bold mb-3 text-white">Accepted International Payment Methods</h2>
+          <p class="text-white-50 lead mb-0" style="max-width: 820px;">
+            RaRe Pharma Exim supports fast, multi-currency, and fully compliant remittance rails for overseas distributors, pharmacies, and healthcare partners across worldwide jurisdictions.
+          </p>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <!-- 1. Wise -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-wise"><i class="fa-solid fa-paper-plane"></i></div>
+              <h4 class="pay-title">Wise</h4>
+              <p class="pay-desc">Fast and cost-effective multi-currency wire transfers via local banking networks.</p>
+              <span class="pay-badge bg-info-subtle text-info border border-info">USD / EUR / GBP / AUD</span>
+            </div>
+          </div>
+
+          <!-- 2. USDT -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-usdt"><i class="fa-solid fa-coins"></i></div>
+              <h4 class="pay-title">USDT (Crypto)</h4>
+              <p class="pay-desc">Instant cryptocurrency settlements with low fees on TRC-20 and ERC-20 blockchains.</p>
+              <span class="pay-badge bg-success-subtle text-success border border-success">TRC-20 / ERC-20 Instant</span>
+            </div>
+          </div>
+
+          <!-- 3. Bank Wire / SWIFT -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-bank"><i class="fa-solid fa-building-columns"></i></div>
+              <h4 class="pay-title">Bank Transfer</h4>
+              <p class="pay-desc">Direct Telegraphic Transfer (TT / Wire / SWIFT) to our corporate bank account.</p>
+              <span class="pay-badge bg-secondary-subtle text-dark border">Direct SWIFT / Wire</span>
+            </div>
+          </div>
+
+          <!-- 4. Western Union -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-wu"><i class="fa-solid fa-money-bill-transfer"></i></div>
+              <h4 class="pay-title">Western Union</h4>
+              <p class="pay-desc">Direct commercial account deposits credited seamlessly into our account in INR.</p>
+              <span class="pay-badge bg-warning-subtle text-dark border border-warning">Direct to Bank in INR</span>
+            </div>
+          </div>
+
+          <!-- 5. Revolut -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-revolut"><i class="fa-solid fa-credit-card"></i></div>
+              <h4 class="pay-title">Revolut</h4>
+              <p class="pay-desc">Seamless digital banking transfers from European and international accounts.</p>
+              <span class="pay-badge bg-dark text-white">Instant Revolut Pay</span>
+            </div>
+          </div>
+
+          <!-- 6. Remitly -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-remitly"><i class="fa-solid fa-money-bill-wave"></i></div>
+              <h4 class="pay-title">Remitly</h4>
+              <p class="pay-desc">Express cross-border international remittances routed directly to India.</p>
+              <span class="pay-badge bg-primary-subtle text-primary border border-primary">Fast Online Remittance</span>
+            </div>
+          </div>
+
+          <!-- 7. WorldRemit -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-worldremit"><i class="fa-solid fa-globe"></i></div>
+              <h4 class="pay-title">WorldRemit</h4>
+              <p class="pay-desc">Reliable money transfer services operating across 130+ nations worldwide.</p>
+              <span class="pay-badge bg-danger-subtle text-danger border border-danger">Global Direct Transfer</span>
+            </div>
+          </div>
+
+          <!-- 8. MoneyGram -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-moneygram"><i class="fa-solid fa-money-check-dollar"></i></div>
+              <h4 class="pay-title">MoneyGram</h4>
+              <p class="pay-desc">Trusted international bank deposit corridor for swift consignment processing.</p>
+              <span class="pay-badge bg-danger-subtle text-danger border border-danger">Account Deposit</span>
+            </div>
+          </div>
+
+          <!-- 9. Taptap Send -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-taptap"><i class="fa-solid fa-mobile-screen-button"></i></div>
+              <h4 class="pay-title">Taptap Send</h4>
+              <p class="pay-desc">Instant mobile-to-bank remittance with zero hidden fees from supported regions.</p>
+              <span class="pay-badge bg-warning-subtle text-dark border border-warning">Mobile Transfer App</span>
+            </div>
+          </div>
+
+          <!-- 10. Skrill -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="450">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-skrill"><i class="fa-solid fa-wallet"></i></div>
+              <h4 class="pay-title">Skrill App</h4>
+              <p class="pay-desc">Secure digital wallet payment & instant cross-border account remittance.</p>
+              <span class="pay-badge bg-purple-subtle text-purple border" style="background:#f3e8ff; color:#7e22ce;">Skrill Wallet / Transfer</span>
+            </div>
+          </div>
+
+          <!-- 11. Bitcoin (BTC) -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="payment-card">
+              <div class="pay-icon-box pay-btc"><i class="fa-brands fa-bitcoin"></i></div>
+              <h4 class="pay-title">BITCOIN (BTC)</h4>
+              <p class="pay-desc">Decentralized peer-to-peer crypto transactions for large volume consignments.</p>
+              <span class="pay-badge bg-warning-subtle text-dark border border-warning">BTC On-Chain</span>
+            </div>
+          </div>
+
+          <!-- 12. Proforma Invoice CTA -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="550">
+            <div class="payment-card text-center justify-content-center bg-dark text-white border-0 shadow">
+              <div class="mb-2 text-warning fs-3"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+              <h5 class="text-white fw-bold mb-2">Need Proforma Invoice?</h5>
+              <p class="text-white-50 small mb-3">Contact our commercial desk to receive exact beneficiary bank details.</p>
+              <button class="btn btn-warning rounded-pill px-4 py-2 fw-bold text-dark btn-sm" data-bs-toggle="modal" data-bs-target="#quoteRequestModal" type="button">
+                <i class="fa-solid fa-file-lines me-1"></i> Fill Quote Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIRECT INQUIRY BOX & CONTACT SECTION -->
+    <section class="py-5" id="contact">
+      <div class="container py-4">
+        <div class="p-5 rounded-4 border bg-white shadow-sm" data-aos="fade-up">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+              <span class="section-tag">Direct Export Desk</span>
+              <h2 class="fw-bold mb-3" style="color: var(--brand-navy);">Ready to Place an Export Consignment?</h2>
+              <p class="text-muted mb-0">
+                Contact RaRe Pharma Exim directly for volume quotes, batch availability, Certificate of Analysis (COA), and dispatch schedules.
+              </p>
+            </div>
+            <div class="col-lg-5 text-lg-end d-flex flex-column gap-2 align-items-lg-end">
+              <!-- 1. WhatsApp Inquiry Button -->
+              <a class="btn-brand-orange btn-lg px-4 py-3 fw-bold w-100 text-center justify-content-center" href="https://wa.me/918329658863?text=Hello%20RaRe%20Pharma,%20I%20want%20to%20inquire%20about%20Steroids%20and%20Medicines." style="max-width: 320px;" target="_blank">
+                <i class="fa-brands fa-whatsapp fs-5"></i> WhatsApp Inquiry
+              </a>
+              <!-- 2. Form Button Under WhatsApp Inquiry -->
+              <button class="btn btn-dark btn-lg rounded-pill px-4 py-3 fw-bold w-100 d-inline-flex align-items-center justify-content-center gap-2" data-bs-toggle="modal" data-bs-target="#quoteRequestModal" style="max-width: 320px;" type="button">
+                <i class="fa-solid fa-file-invoice text-warning"></i> Consignment Quote Form
+              </button>
+              <!-- 3. Email Button Under The Form Button -->
+              <a class="btn btn-outline-dark btn-lg rounded-pill px-4 py-3 fw-bold w-100 text-center" href="mailto:rarepharma9@gmail.com" style="max-width: 320px;">
+                <i class="fa-solid fa-envelope me-2 text-warning"></i> Email Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ENTERPRISE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="mb-3 d-flex align-items-center gap-2">
+            <img src="logo.jpg" alt="RaRe Pharma Exim" class="footer-logo rounded-2" />
+            <span class="fs-4 fw-bold text-white">RaRe <span style="color: var(--brand-orange);">PHARMA EXIM</span></span>
+          </div>
+          <p class="small text-secondary pe-lg-5">
+            RaRe Pharma Exim is an international pharmaceutical export organization committed to supplying high-grade Steroids, Tablets, Capsules, and specialized therapeutic formulations to worldwide healthcare networks.
+          </p>
+        </div>
+
+        <div class="col-lg-3">
+          <h6 class="footer-heading">Quick Navigation</h6>
+          <div class="footer-links small">
+            <a href="#posts-section" onclick="filterCatalog('Steroids')">Steroids & Hormonals</a>
+            <a href="#posts-section" onclick="filterCatalog('Tablets')">Solid Oral Tablets</a>
+            <a href="#posts-section" onclick="filterCatalog('Capsules')">Gelatin Capsules</a>
+            <a href="#posts-section" onclick="filterCatalog('Other Medicines')">Syrups & Other Medicines</a>
+            <a href="#payments-section">Accepted Payment Methods</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="footer-heading">Official Correspondence</h6>
+          <p class="small text-secondary mb-2"><i class="fa-solid fa-phone text-warning me-2"></i> Phone: +91 8329658863</p>
+          <p class="small text-secondary mb-2"><i class="fa-solid fa-envelope text-warning me-2"></i> Email: rarepharma9@gmail.com</p>
+          <p class="small text-secondary mb-0"><i class="fa-solid fa-ship text-warning me-2"></i> Export Cargo: Air & Ocean Logistics</p>
+        </div>
+      </div>
+
+      <hr class="border-secondary my-4" />
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center small text-secondary">
+        <p class="mb-0">&copy; 2021 RaRe Pharma Exim. All Rights Reserved.</p>
+        <p class="mb-0">Global Pharmaceutical Exporters</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONSIGNMENT QUOTE REQUEST MODAL FORM -->
+  <div class="modal fade" id="quoteRequestModal" tabindex="-1" aria-labelledby="quoteRequestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 24px; overflow: hidden;">
+        <div class="modal-header border-0 pb-0 pt-4 px-4 px-md-5">
+          <div class="quote-modal-header">
+            <div class="quote-icon-badge"><i class="fa-solid fa-file-lines"></i></div>
+            <div>
+              <h4 class="fw-bold mb-0" id="quoteRequestModalLabel" style="color: var(--brand-navy);">Consignment Quote Request</h4>
+              <p class="text-muted small mb-0">RaRe Pharma Exim International Export Division</p>
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body px-4 px-md-5 py-4">
+          <form id="consignQuoteForm" onsubmit="return false;">
+            <!-- Requirement / Product -->
+            <div class="mb-3">
+              <label class="form-label-custom">Requirement / Product *</label>
+              <input type="text" class="form-control form-control-custom" id="quote_product" placeholder="e.g. Test-E 250mg, Vidalista 20mg, Primobol..." required />
+            </div>
+
+            <div class="row g-3 mb-3">
+              <!-- Name -->
+              <div class="col-md-6">
+                <label class="form-label-custom">Name *</label>
+                <input type="text" class="form-control form-control-custom" id="quote_name" placeholder="e.g. Dr. John / Apex Distributors" required />
+              </div>
+              <!-- Contact Number -->
+              <div class="col-md-6">
+                <label class="form-label-custom">Contact Number *</label>
+                <input type="tel" class="form-control form-control-custom" id="quote_contact" placeholder="e.g. +1 234 567 8900" required />
+              </div>
+            </div>
+
+            <!-- Destination Country -->
+            <div class="mb-3">
+              <label class="form-label-custom">Destination Country *</label>
+              <input type="text" class="form-control form-control-custom" id="quote_country" placeholder="e.g. USA, UK, Mexico, UAE, Germany, Kenya..." required />
+            </div>
+
+            <!-- Additional Details -->
+            <div class="mb-4">
+              <label class="form-label-custom">Additional Details / Regulatory Requirements</label>
+              <textarea class="form-control form-control-custom" id="quote_details" rows="3" placeholder="e.g. COA required, special batch packaging, urgent cold-chain air delivery..."></textarea>
+            </div>
+
+            <!-- Form Action Buttons -->
+            <div class="d-flex flex-wrap gap-3">
+              <button type="button" class="btn btn-submit-quote-wa flex-grow-1" onclick="submitQuoteViaWhatsApp()">
+                <i class="fa-brands fa-whatsapp fs-5"></i> Send via WhatsApp
+              </button>
+              <button type="button" class="btn btn-submit-quote-email flex-grow-1" onclick="submitQuoteViaEmail()">
+                <i class="fa-solid fa-envelope me-1"></i> Send via Email
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP CHAT BUTTON -->
+  <a class="rare-floating-whatsapp" href="https://wa.me/918329658863?text=Hello%20RaRe%20Pharma,%20I%20want%20to%20inquire%20about%20Steroids%20and%20Medicines." target="_blank" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-label">Chat with RaRe Pharma Team</span>
+    <div class="whatsapp-icon-btn">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+  </a>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Main Website Script & Hero Scroll Animation -->
+  <script src="app.js?v=7"></script>
+</body>
+</html>
